@@ -2,6 +2,7 @@
 
 This project is a Flask web application that performs Named Entity Recognition (NER) using the spaCy library. It uses the Kaggle Fake News Dataset for testing.
 At teh end of this project we will have a web app that will look similar to this. 
+![Results](results/output0.png)
 ![Results](results/output1.png)
 ![Results](results/output2.png)
 
