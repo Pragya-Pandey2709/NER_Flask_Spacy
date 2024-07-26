@@ -1,8 +1,29 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 import spacy
+import pandas as pd
+import random
+import re
 
 app = Flask(__name__)
 nlp = spacy.load("en_core_web_lg")
+
+# Load and combine the datasets
+true_df = pd.read_csv('true.csv')  # Path to true.csv
+fake_df = pd.read_csv('fake.csv')  # Path to fake.csv
+
+# Combine datasets
+df = pd.concat([true_df, fake_df], ignore_index=True)
+
+# Data preprocessing
+def preprocess_text(text):
+    if pd.isna(text):
+        return ''
+    text = text.lower()  # Convert to lowercase
+    text = re.sub(r'\s+', ' ', text)  # Replace multiple whitespaces with a single space
+    text = re.sub(r'[^\w\s]', '', text)  # Remove special characters
+    return text
+
+df['cleaned_text'] = df['text'].apply(preprocess_text)
 
 def get_highlighted_text(text):
     doc = nlp(text)
