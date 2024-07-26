@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NER Extraction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #welcome-message {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+    </style>
+    <script>
+        function showWelcomeMessage() {
+            var message = document.getElementById('welcome-message');
+            message.style.display = 'block';
+            setTimeout(function() {
+                message.style.display = 'none';
+            }, 5000);
+        }
+        window.onload = function() {
+            showWelcomeMessage();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-message">Welcome to the NER Extraction 
+Tool!</div>
+        <h1>NER Extraction</h1>
+        <form action="/extract" method="post">
+            <textarea name="text" rows="10" placeholder="Enter text 
+here..."></textarea><br>
+            <input type="submit" value="Extract Named Entities">
+        </form>
+    </div>
+</body>
+</html>
+

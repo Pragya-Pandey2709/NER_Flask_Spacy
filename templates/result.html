@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NER Extraction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        p {
+            margin: 1rem 0;
+            color: #555;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .entity-label {
+            font-weight: bold;
+            color: #007bff;
+            margin-right: 10px;
+        }
+        .entity-image {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 8px;
+        }
+        .popup button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function showResultPopup() {
+            var popup = document.getElementById('result-popup');
+            popup.style.display = 'block';
+        }
+        window.onload = function() {
+            showResultPopup();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>NER Extraction Result</h1>
+        <p>Input Text:</p>
+        <p>{{ text }}</p>
+        <p>Named Entities:</p>
+        <ul>
+            {% for entity, label in entities %}
+                <li>
+                    <img src="{{ url_for('static', filename='images/' + 
+label + '.png') }}" class="entity-image" alt="{{ label }}">
+                    <span class="entity-label">{{ entity }}</span> - {{ 
+label }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/">Go back</a>
+    </div>
+    <div id="result-popup" class="popup">
+        <p>Your results are ready!</p>
+        <button 
+onclick="document.getElementById('result-popup').style.display='none'">Close</button>
+    </div>
+</body>
+</html>
+
