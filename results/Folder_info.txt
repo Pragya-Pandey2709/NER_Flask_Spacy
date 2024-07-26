@@ -1,0 +1,3 @@
+``` 
+This folder contains the result images, used in the READme file.
+```
