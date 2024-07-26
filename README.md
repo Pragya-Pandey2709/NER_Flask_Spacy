@@ -1,6 +1,3 @@
-
-
-```markdown
 # NER Flask Spacy Project
 
 This project is a Flask web application that performs Named Entity Recognition (NER) using the spaCy library. It uses the Kaggle Fake News Dataset for testing.
@@ -15,30 +12,31 @@ Before you begin, ensure you have met the following requirements:
 - (Optional but recommended) A virtual environment set up
 
 ### Installation
-```
+
 1. **Clone the repository**:
+   
    ```bash
    git clone https://github.com/Pragya-Pandey2709/NER_Flask_Spacy.git
    cd NER_Flask_Spacy
    ```
 
-2. **Create a virtual environment** (optional but recommended):
+3. **Create a virtual environment** (optional but recommended):
    ```bash
    python -m venv myenv1
    source myenv1/bin/activate  # On Windows use `myenv\Scripts\activate`
    ```
 
-3. **Install the required packages**:
+4. **Install the required packages**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Download the spaCy language model**:
+5. **Download the spaCy language model**:
    ```bash
    python -m spacy download en_core_web_sm
    ```
 
-5. **Download and extract the Kaggle Fake News Dataset** to the project directory.
+6. **Download and extract the Kaggle Fake News Dataset** to the project directory.
 
 ## Running the Flask Application
 
@@ -72,29 +70,29 @@ Before you begin, ensure you have met the following requirements:
 ```
 ## Images of result 
 
-# Welcome message page 
+### Welcome message page 
 ![Welcome message page](results/welcome_page.png)
-# Input page
+###  Input page
 ![Input page](results/input_page.png)
-# Result message page 
+###  Result message page 
 ![Result message](results/result_msg.png)
-# Person result page 
+###  Person result page 
 ![Person result page](results/person.png)
-# Location result page 
+###  Location result page 
 ![Location result page](results/location.png)
-# GPE result page 
+###  GPE result page 
 ![GPE result page](results/gpe.png)
-# Money result page 
+###  Money result page 
 ![Money result page](results/money.png)
-# Ordinal result page 
+###  Ordinal result page 
 ![Ordinal result page](results/ordinal.png)
-# Organisation result page 
+###  Organisation result page 
 ![Organisation result page](results/org.png)
-# Percent result page 
+###  Percent result page 
 ![Percent result page](results/percent.png)
-# Quantity result page 
+###  Quantity result page 
 ![Quantity result page](results/quantity.png)
-# Time result page 
+###  Time result page 
 ![Time result page](results/time.png)
 
 
