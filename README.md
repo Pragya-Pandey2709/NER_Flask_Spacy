@@ -15,7 +15,7 @@ Before you begin, ensure you have met the following requirements:
 - (Optional but recommended) A virtual environment set up
 
 ### Installation
-
+```
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Pragya-Pandey2709/NER_Flask_Spacy.git
@@ -74,7 +74,5 @@ Before you begin, ensure you have met the following requirements:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-```
 
 By following these instructions, you will be able to set up the Python environment and run the Flask application for the NER extraction project using the Kaggle Fake News Dataset.
-```
