@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NER Extraction</title>
+    <title>Named Entity Extractor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,7 +24,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 80%;
-            max-width: 600px;
+            max-width: 800px;
             text-align: center;
         }
         h1 {
@@ -30,58 +33,54 @@
         }
         textarea {
             width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
+            height: 150px;
             margin-bottom: 1rem;
-            font-size: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            resize: none;
         }
-        input[type="submit"] {
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
             background-color: #007bff;
             color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 16px;
+            margin: 0 5px;
         }
-        input[type="submit"]:hover {
+        button:hover {
             background-color: #0056b3;
         }
-        #welcome-message {
-            background-color: #007bff;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
     </style>
-    <script>
-        function showWelcomeMessage() {
-            var message = document.getElementById('welcome-message');
-            message.style.display = 'block';
-            setTimeout(function() {
-                message.style.display = 'none';
-            }, 5000);
-        }
-        window.onload = function() {
-            showWelcomeMessage();
-        }
-    </script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">Named Entity Extractor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br/><br/><br/>
     <div class="container">
-        <div id="welcome-message">Welcome to the NER Extraction 
-Tool!</div>
-        <h1>NER Extraction</h1>
-        <form action="/extract" method="post">
-            <textarea name="text" rows="10" placeholder="Enter text 
-here..."></textarea><br>
-            <input type="submit" value="Extract Named Entities">
+        <h1>Named Entity Extractor</h1>
+        <form action="/result" method="post">
+            <textarea name="input_text" placeholder="Enter text here..."></textarea><br/>
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
         </form>
     </div>
 </body>
 </html>
-
