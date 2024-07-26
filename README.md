@@ -70,6 +70,34 @@ Before you begin, ensure you have met the following requirements:
 │   ├── fake.csv         # Fake news dataset (example)
 │   └── true.csv         # True news dataset (example)
 ```
+## Images of result 
+
+# Welcome message page 
+![Welcome message page](results/welcome_page.png)
+# Input page
+![Input page](results/input_page.png)
+# Result message page 
+![Result message](results/result_msg.png)
+# Person result page 
+![Person result page](results/person.png)
+# Location result page 
+![Location result page](results/location.png)
+# GPE result page 
+![GPE result page](results/gpe.png)
+# Money result page 
+![Money result page](results/money.png)
+# Ordinal result page 
+![Ordinal result page](results/ordinal.png)
+# Organisation result page 
+![Organisation result page](results/org.png)
+# Percent result page 
+![Percent result page](results/percent.png)
+# Quantity result page 
+![Quantity result page](results/quantity.png)
+# Time result page 
+![Time result page](results/time.png)
+
+
 
 ## License
 
