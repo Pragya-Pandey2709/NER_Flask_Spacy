@@ -1,4 +1,4 @@
-Certainly! Here’s a concise and comprehensive README file in one markdown window with different headings:
+
 
 ```markdown
 # NER Flask Spacy Project
